@@ -16,3 +16,25 @@ document.appendChild(document.createElement('div'));
 //把docFrag加入到DOM-Tree
 document.body.appendChild(docFrag);
 ```
+2.DOM0级事件处理程序的注意点：
+><!--DOM0级事件处理程序一定要把对应的JS代码放在DOM的后面，不能放在<head>里面-->
+```JavaScript
+<input id="btn1" type="button" value="显示/隐藏" />
+<div id="demo" class="demo1"></div>
+
+<script type="text/javascript">
+	var btn = document.getElementById('btn1');
+	//注意这里用的是hideShow，不是hideShow(),因为这是赋值语句！！
+	btn.onclick = hideShow; 
+	function hideShow(){
+		var demo = document.getElementById('demo');
+		console.log(demo.className+demo.style+demo);
+		if (demo.style.display == "block"){
+			demo.style.display = "none";
+		}
+		else{
+			demo.style.display = "block";
+		}
+	}
+</script>
+```
