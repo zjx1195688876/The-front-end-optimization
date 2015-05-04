@@ -17,7 +17,8 @@ document.appendChild(document.createElement('div'));
 document.body.appendChild(docFrag);
 ```
 2.DOM0级事件处理程序的注意点：
-><!--DOM0级事件处理程序一定要把对应的JS代码放在DOM的后面，不能放在<head>里面-->
+>DOM0级事件处理程序一定要把对应的JS代码放在DOM的后面，不能放在<head>里面
+
 ```JavaScript
 <input id="btn1" type="button" value="显示/隐藏" />
 <div id="demo" class="demo1"></div>
